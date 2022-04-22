@@ -156,5 +156,5 @@
     </table> 
   </div>
   <br>
-    CHARTJS-DJANGO
+    Payoff-Opcoes-Django
 </div>
