@@ -16,7 +16,7 @@
     var list_label = {{list_label|safe}};
     var compradas = {{compradas|safe}};
     var vendidas = {{vendidas|safe}};
-    // var data3 = {{data3|safe}};
+    var lista_concatenada = {{lista_concatenada|safe}};
     // var data4 = {{data4|safe}};
     var resultante = {{resultante|safe}};
     
@@ -24,7 +24,7 @@
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: list_label,
+            labels:   lista_concatenada ,
             datasets: [
                 {
                     label: 'Vendidas',
