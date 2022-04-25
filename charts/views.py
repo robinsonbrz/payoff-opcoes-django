@@ -28,10 +28,7 @@ def home(request):
 
     # calculo do vetor distancia percentual
     dist_percentual = np.array(list_label)
-    print(a)
-    print(b)
-    print(c)
-    print(d)
+
 
 
     
