@@ -42,10 +42,10 @@ def home(request):
         'compradas': compradas,
         'resultante': resultante,
         'lista_concatenada': lista_concatenada,
-        'a':a,
-        'b':b,
-        'c':c,
-        'd':d,
+        'a': a,
+        'b': b,
+        'c': c,
+        'd': d,
     }
     return render(request, 'charts/index2.html', context=mydict)
     
