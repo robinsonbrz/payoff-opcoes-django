@@ -127,6 +127,7 @@
   <br>
   <h3 align="left"> Features </h3>
   <div align="left">
+  
     - [x] Interface administrativa Django com campos personalizados<br>
     - [x] Cadastro de opções<br>
     - [ ] Cadastro de Séries de opções Bovespa B3<br>
@@ -135,6 +136,23 @@
     - [ ] Scrap das séries autorizadas site B3<br>
     - [ ] Apresentação da curva de payoff em modo gráfico ChartJs<br>
     - [ ] Deploy Oracle Cloud Infrastructure
+    - [ ] transformar opções em objetos
+    - [ ] todo inputs
+    - [ ] input preço de referência
+    - [ ] input opção: call ou put;  valor strike;  quantidade; positivo é compra negativo é venda
+    - [ ] Lista de opções
+    - [ ] possibilidade de inserir papel
+    - [ ] possibilidade de modificar o range do payoff
+    - [ ] possibilidade de modificar os steps do cálculo
+    - [ ] possibilidade de inserir valor de compra ou venda da opção para a simulação
+    - [ ] somente com valores de C/V é possível calcular o payoff
+
+
+
+
+
+
+
   </div>
   <h1 align="center"> Informações e contato </h1> 
   <div align="center">

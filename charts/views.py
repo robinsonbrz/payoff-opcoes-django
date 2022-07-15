@@ -10,21 +10,46 @@ def home(request):
     range_max = 4325
     steps = 25
     preco_referencia = 31.54
+
+    # transformar opções em objetos
+    # todo inputs
+    # input preço de referência
+    # input opção: call ou put;  valor strike;  quantidade; positivo é compra negativo é venda
+    # Lista de opções
+    # possibilidade de inserir papel
+    # possibilidade de modificar o range do payoff
+    # possibilidade de modificar os steps do cálculo
+
+    # possibilidade de inserir valor de compra ou venda da opção para a simulação
+    # somente com valores de C/V é possível calcular o payoff
+
+
     list_label = pu.cria_lista_valores_cotacao(range_min, range_max, steps)
-    list_Payoff_1 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 29.59, -10000) # noqa e501
-    list_Payoff_2 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 33.59, -10000) # noqa e501
-    list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 25.09, 10000) # noqa e501
-    list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 38.09, 10000) # noqa e501
+    # list_Payoff_1 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 29.59, -10000) # noqa e501
+    # list_Payoff_2 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 33.59, -10000) # noqa e501
+    # list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 25.09, 10000) # noqa e501
+    # list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 38.09, 10000) # noqa e501
+
+    list_Payoff_1 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 26.44, -300) # noqa e501
+    list_Payoff_2 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 29.94, -300) # noqa e501
+    list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 26.94, -4000) # noqa e501
+    list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 30.44, -4000) # noqa e501
+
+
+
 
     a = np.array(list_Payoff_1)
     b = np.array(list_Payoff_2)
-    vendidas = (a+b).tolist()
+
 
     c = np.array(list_Payoff_3)
     d = np.array(list_Payoff_4)
-    compradas = (c+d).tolist()
+    vendidas = (a+b+c+d).tolist()
+    compradas = [0,]
+    # compradas = (c+d).tolist()
+    print("compradas", compradas)
 
-    resultante = (a+b+c+d+11500).tolist()
+    resultante = (a+b+c+d).tolist()
 
     # calculo do vetor distancia percentual
     dist_percentual = np.array(list_label)
