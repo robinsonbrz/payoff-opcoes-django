@@ -1,6 +1,6 @@
 ﻿<div width="720" >
   <h1 align="left">Aplicativo Cálculo de Curva de Payoff Opções em Django</h1>
-  <h2 align="left">A partir do Strike Simula Payoff em range de preço</h2>
+  <h2 align="left">A partir dos Strikes calcula e exibe gráfico de Payoff em range de preço</h2>
   <div align="center">
     <table>
       </tr>
