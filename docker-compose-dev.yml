@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+
+  web:
+    container_name: payoff_web_dev
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    # command: python manage.py runserver 0.0.0.0:8000  
+    volumes:
+      - .:/code
+    tty: true
+    ports:
+      - "8001:8000"
+    networks:
+      rob_network:
+        ipv4_address: 172.18.0.100
+
+networks:
+  rob_network:
+    external:
+      name: docker-db_rede

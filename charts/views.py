@@ -6,8 +6,8 @@ import charts.payoff_utils as pu
 
 
 def home(request):
-    range_min = 400
-    range_max = 4325
+    range_min = 2000
+    range_max = 3725
     steps = 25
     preco_referencia = 31.54
 
