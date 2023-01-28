@@ -24,6 +24,8 @@ def cria_lista_valores_cotacao(range_min, range_max, steps):
     return lista_valores_cotacao
 
 
+
+
 # alimenta uma lista com os possíveis valores de payoff em um range
 def cria_lista_valores_payoff(range_min, range_max, steps, call_ou_put, strike, quantidade): # noqa e501
     lista_valores_payoff = []
