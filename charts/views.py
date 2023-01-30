@@ -9,7 +9,7 @@ def home(request):
     range_min = 2000
     range_max = 3725
     steps = 25
-    preco_referencia = 31.54
+    preco_referencia = 25.65
 
     # transformar opções em objetos
     # todo inputs
@@ -30,10 +30,10 @@ def home(request):
     # list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 25.09, 10000) # noqa e501
     # list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 38.09, 10000) # noqa e501
 
-    list_Payoff_1 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 26.44, -300) # noqa e501
-    list_Payoff_2 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 29.94, -300) # noqa e501
-    list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 26.94, -4000) # noqa e501
-    list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 30.44, -4000) # noqa e501
+    list_Payoff_1 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 38.76, 1000) # noqa e501
+    list_Payoff_2 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 28.01, -13000) # noqa e501
+    list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 29.01, 8000) # noqa e501
+    list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 0.01, 5000) # noqa e501
 
 
 
