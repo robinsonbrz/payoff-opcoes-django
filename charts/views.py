@@ -33,7 +33,7 @@ def home(request):
     list_Payoff_1 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'put', 38.76, 1000) # noqa e501
     list_Payoff_2 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 28.01, -13000) # noqa e501
     list_Payoff_3 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 29.01, 8000) # noqa e501
-    list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'call', 0.01, 5000) # noqa e501
+    list_Payoff_4 = pu.cria_lista_valores_payoff(range_min, range_max, steps, 'ativo', 0, 5000) # noqa e501
 
 
 

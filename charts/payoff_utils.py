@@ -13,6 +13,9 @@ def calcula_payoff(call_ou_put, strike, cotacao, quantidade):
             return 0.00
         else:
             return round(((cotacao)-(strike)) * -quantidade, 2)
+    if call_ou_put == 'ativo':
+        return cotacao * quantidade
+
 
 
 # Cria uma lista de valores em um range com passos definidos
