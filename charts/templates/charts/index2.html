@@ -12,6 +12,36 @@
     <h1>Cálculo de Payoff!</h1>
 
     <canvas id="myChart" width="100" height="30hv"></canvas>
+
+
+    
+    <button id="generator">Generator</button>
+
+
+    <script>
+    document.getElementById('generator').addEventListener('click', function() {
+    
+        var newDiv = document.createElement('div');
+        document.body.appendChild(newDiv);
+    
+        var newButton = document.createElement('button');
+        newButton.setAttribute('id', 'delete');
+        newButton.setAttribute('class', 'cls');
+        newDiv.appendChild(newButton);
+    
+        var txtField = document.createElement('input');
+        txtField.setAttribute('type', 'text');
+        newDiv.appendChild(txtField);
+    
+        var dropDownList = document.createElement('select');
+        newDiv.appendChild(dropDownList);
+    
+    });
+    </script>
+
+
+
+
     <script>
 
     var list_label = {{list_label|safe}};
