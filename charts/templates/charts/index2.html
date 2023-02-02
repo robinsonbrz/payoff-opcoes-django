@@ -18,26 +18,41 @@
     <button id="generator">Generator</button>
 
 
+
     <script>
-    document.getElementById('generator').addEventListener('click', function() {
-    
-        var newDiv = document.createElement('div');
-        document.body.appendChild(newDiv);
-    
-        var newButton = document.createElement('button');
-        newButton.setAttribute('id', 'delete');
-        newButton.setAttribute('class', 'cls');
-        newDiv.appendChild(newButton);
-    
-        var txtField = document.createElement('input');
-        txtField.setAttribute('type', 'text');
-        newDiv.appendChild(txtField);
-    
-        var dropDownList = document.createElement('select');
-        newDiv.appendChild(dropDownList);
-    
-    });
-    </script>
+        document.getElementById('generator').addEventListener('click', function() {
+        
+            var newDiv = document.createElement('div');
+            document.body.appendChild(newDiv);
+        
+            var newCheckbox = document.createElement('input');
+            newCheckbox.setAttribute('type', 'checkbox');
+            newCheckbox.setAttribute('class', 'enableLine');
+            newCheckbox.setAttribute('checked', 'true');
+            newDiv.appendChild(newCheckbox);
+        
+            var txtField = document.createElement('input');
+            txtField.setAttribute('type', 'text');
+            newDiv.appendChild(txtField);
+        
+            var dropDownList = document.createElement('select');
+            var listItems = ['', 'item1', 'item2', 'item3'];
+            listItems.forEach(function(item) {
+              var option = document.createElement('option');
+              option.innerHTML = item;
+              dropDownList.appendChild(option);
+            });
+            dropDownList.addEventListener('change', function(){
+                txtField.value = this.value;
+
+            });
+            newDiv.appendChild(dropDownList);
+            var txtField = document.createElement('input');
+            txtField.setAttribute('type', 'text');
+            newDiv.appendChild(txtField);            
+      
+        });
+        </script>
 
 
 
