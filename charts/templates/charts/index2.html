@@ -13,9 +13,54 @@
 
     <canvas id="myChart" width="100" height="30hv"></canvas>
 
-
+    <p>
+        <label for="numberOfSteps">Number of steps:</label>
+        <input type="number" id="numberOfSteps" value="5">
+    </p>
+    <p>
+        <label for="startOfArray">Start of array:</label>
+        <input type="number" id="startOfArray" value="1">
+    </p>
+    <p>
+        <label for="endOfArray">End of array:</label>
+        <input type="number" id="endOfArray" value="1">
+    </p>
+    <p>
+        <button onclick="createArrayAndShow()">Create array</button>
+    </p>
+    <p id="array"></p>
     
     <button id="generator">Generator</button>
+
+
+<script>
+// Cria e exibe a matriz
+function createArray(numberOfSteps, startOfArray, endOfArray) {
+    var array = [];
+    var step = (endOfArray - startOfArray) / (numberOfSteps - 1);
+    for (var i = 0; i < numberOfSteps; i++) {
+        array.push(startOfArray + i * step);
+    }
+    return array;
+}
+
+function showArray(array) {
+    var text = "";
+    for (var i = 0; i < array.length; i++) {
+        text += array[i] + " ";
+    }
+    document.getElementById("array").innerHTML = text;
+}
+
+function createArrayAndShow() {
+    var numberOfSteps = document.getElementById("numberOfSteps").value;
+    var startOfArray = document.getElementById("startOfArray").value;
+    var endOfArray = document.getElementById("endOfArray").value;
+    var array = createArray(numberOfSteps, startOfArray, endOfArray);
+    showArray(array);
+
+
+</script>
 
 
 
@@ -58,6 +103,7 @@
 
 
     <script>
+        
 
     var list_label = {{list_label|safe}};
     var compradas = {{compradas|safe}};
