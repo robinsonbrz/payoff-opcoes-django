@@ -39,7 +39,7 @@ function createArray(numberOfSteps, startOfArray, endOfArray) {
     var array = [];
     var step = (endOfArray - startOfArray) / (numberOfSteps - 1);
     for (var i = 0; i < numberOfSteps; i++) {
-        array.push((((startOfArray + i * step) * 100) / 100).toFixed(2));
+        array.push((((parseInt(startOfArray) + i * step) * 100) / 100).toFixed(2));
     }
     return array;
 }
