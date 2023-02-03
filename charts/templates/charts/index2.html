@@ -23,7 +23,7 @@
     </p>
     <p>
         <label for="endOfArray">End of array:</label>
-        <input type="number" id="endOfArray" value="1">
+        <input type="number" id="endOfArray" value="10">
     </p>
     <p>
         <button onclick="createArrayAndShow()">Create array</button>
@@ -39,7 +39,7 @@ function createArray(numberOfSteps, startOfArray, endOfArray) {
     var array = [];
     var step = (endOfArray - startOfArray) / (numberOfSteps - 1);
     for (var i = 0; i < numberOfSteps; i++) {
-        array.push(startOfArray + i * step);
+        array.push((((startOfArray + i * step) * 100) / 100).toFixed(2));
     }
     return array;
 }
@@ -58,6 +58,7 @@ function createArrayAndShow() {
     var endOfArray = document.getElementById("endOfArray").value;
     var array = createArray(numberOfSteps, startOfArray, endOfArray);
     showArray(array);
+}
 
 
 </script>
