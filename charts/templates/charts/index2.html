@@ -30,47 +30,31 @@
     </p>
     <p id="array"></p>
     
-    <button id="generator">Generator</button>
+    
+    <div id="seletores">
+        <button id="generator">Generator</button>
+    </div>
 
-
-<script>
-// Cria e exibe a matriz
-function createArray(numberOfSteps, startOfArray, endOfArray) {
-    var array = [];
-    var step = (endOfArray - startOfArray) / (numberOfSteps - 1);
-    for (var i = 0; i < numberOfSteps; i++) {
-        array.push((((parseInt(startOfArray) + i * step) * 100) / 100).toFixed(2));
-    }
-    return array;
-}
-
-function showArray(array) {
-    var text = "";
-    for (var i = 0; i < array.length; i++) {
-        text += array[i] + " ";
-    }
-    document.getElementById("array").innerHTML = text;
-}
-
-function createArrayAndShow() {
-    var numberOfSteps = document.getElementById("numberOfSteps").value;
-    var startOfArray = document.getElementById("startOfArray").value;
-    var endOfArray = document.getElementById("endOfArray").value;
-    var array = createArray(numberOfSteps, startOfArray, endOfArray);
-    showArray(array);
-}
-
-
-</script>
-
+    
 
 
     <script>
+                // Cria um checkbox txt field drop down e txt
         document.getElementById('generator').addEventListener('click', function() {
-        
             var newDiv = document.createElement('div');
-            document.body.appendChild(newDiv);
+            document.getElementById('seletores').appendChild(newDiv);
         
+            // var newDiv = document.createElement('div');
+            // document.body.appendChild(newDiv);
+            
+            var newButton = document.createElement('button'); 
+            newButton.innerHTML = 'x'; 
+            newButton.addEventListener('click', function(){ 
+                newDiv.parentNode.removeChild(newDiv);
+            });
+            newDiv.appendChild(newButton);  
+
+
             var newCheckbox = document.createElement('input');
             newCheckbox.setAttribute('type', 'checkbox');
             newCheckbox.setAttribute('class', 'enableLine');
@@ -84,8 +68,8 @@ function createArrayAndShow() {
             var dropDownList = document.createElement('select');
             var listItems = ['', 'item1', 'item2', 'item3'];
             listItems.forEach(function(item) {
-              var option = document.createElement('option');
-              option.innerHTML = item;
+                var option = document.createElement('option');
+                option.innerHTML = item;
               dropDownList.appendChild(option);
             });
             dropDownList.addEventListener('change', function(){
@@ -95,7 +79,8 @@ function createArrayAndShow() {
             newDiv.appendChild(dropDownList);
             var txtField = document.createElement('input');
             txtField.setAttribute('type', 'text');
-            newDiv.appendChild(txtField);            
+            newDiv.appendChild(txtField);    
+                   
       
         });
         </script>
@@ -104,12 +89,12 @@ function createArrayAndShow() {
 
 
     <script>
-        
 
-    var list_label = {{list_label|safe}};
-    var compradas = {{compradas|safe}};
-    var vendidas = {{vendidas|safe}};
-    var lista_concatenada = {{lista_concatenada|safe}};
+        
+        var list_label = {{list_label|safe}};
+        var compradas = {{compradas|safe}};
+        var vendidas = {{vendidas|safe}};
+        var lista_concatenada = {{lista_concatenada|safe}};
     // var data4 = {{data4|safe}};
     var resultante = {{resultante|safe}};
     
@@ -187,6 +172,36 @@ function createArrayAndShow() {
     });
     </script>
     
+    <script>
+    // Cria e exibe a matriz com qtd de passos, inicio e fim
+    function createArray(numberOfSteps, startOfArray, endOfArray) {
+        var array = [];
+        var step = (endOfArray - startOfArray) / (numberOfSteps - 1);
+        for (var i = 0; i < numberOfSteps; i++) {
+            array.push((((parseInt(startOfArray) + i * step) * 100) / 100).toFixed(2));
+        }
+        return array;
+    }
+    
+    function showArray(array) {
+        var text = "";
+        for (var i = 0; i < array.length; i++) {
+            text += array[i] + " ";
+        }
+        document.getElementById("array").innerHTML = text;
+    }
+    
+    function createArrayAndShow() {
+        var numberOfSteps = document.getElementById("numberOfSteps").value;
+        var startOfArray = document.getElementById("startOfArray").value;
+        var endOfArray = document.getElementById("endOfArray").value;
+        var array = createArray(numberOfSteps, startOfArray, endOfArray);
+        showArray(array);
+    }
+    
+    
+    </script>
+    
 
 
 
@@ -196,10 +211,10 @@ function createArrayAndShow() {
     <p>
         Desenvolvido por:
       <a class="navbar-brand logo_h" href="https://enedino.com.br"><img src="{% static 'assets/images/logo.png'%}"
-          alt=""></a>
+        alt=""></a>
       <a class="navbar-brand logo_h" href="https://enedino.com.br"  style="heigth:20px"><img
             src="{% static 'assets/images/faviconEnedino.svg'%}" style="width:30px" alt=""></a>
-      </p>
+        </p>
 
 
 
