@@ -1,8 +1,10 @@
 import numpy as np
 import pandas as pd
 from django.shortcuts import render
-
+from django.views.generic import View
+from django.http import JsonResponse
 import charts.payoff_utils as pu
+from random import randint
 
 
 def home(request):
@@ -77,3 +79,11 @@ def home(request):
     
     # from charts.models import Ativo
     # p = Ativo.objects.all().order_by('-id')[:10] 
+
+
+class AjaxCalculoHandler(View):
+    def get(self, request):
+        if request.headers.get('X-Requested-Width') == 'XMLHttpRequest':
+            number = randint(1, 10)
+            print(number)
+            return JsonResponse({'number':number})

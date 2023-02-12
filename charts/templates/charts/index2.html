@@ -35,11 +35,27 @@
         <button id="generator">Generator</button>
     </div>
 
-    
-
+    <div id="ajaxFunctions">
+        <button id="ajaxButton" onclick="calculoAjax()">Call to ajax</button>
+    </div>
 
     <script>
-                // Cria um checkbox txt field drop down e txt
+        async function calculoAjax(){
+            let response = await fetch('/ajaxCalculoHandler',{
+                method: 'get',
+                headers:{
+                    'X-Requested-Width':'XMLHttpRequest',
+                    'Content-Type':'application/json'
+                }
+            })
+            let data = await response.json()
+            console.log(await data)
+        }
+    </script>
+
+    <script>
+        // Cria um checkbox txt field drop down e txt
+        // Dentro de uma div que se exclui 
         document.getElementById('generator').addEventListener('click', function() {
             var newDiv = document.createElement('div');
             document.getElementById('seletores').appendChild(newDiv);
