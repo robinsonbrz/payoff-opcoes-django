@@ -84,6 +84,6 @@ def home(request):
 class AjaxCalculoHandler(View):
     def get(self, request):
         if request.headers.get('X-Requested-Width') == 'XMLHttpRequest':
-            number = randint(1, 10)
-            print(number)
-            return JsonResponse({'number':number})
+            lista_number = [ (randint(0, 999)/100) for _ in range(10)]
+            print(lista_number)
+            return JsonResponse({'number':lista_number})
